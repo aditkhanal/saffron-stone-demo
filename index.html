@@ -330,6 +330,18 @@ const sc=()=>h.classList.toggle("solid",scrollY>40);sc();addEventListener("scrol
 function setNav(o){h.classList.toggle("open",o);bg.setAttribute("aria-expanded",o);bg.setAttribute("aria-label",o?"Close menu":"Open menu");bi.innerHTML=`<use href="#${o?"x":"menu"}"/>`}
 bg.onclick=()=>setNav(!h.classList.contains("open"));
 document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>setNav(false)));
+  document.querySelectorAll('#nav a[href^="#"]').forEach(a=>{
+  a.addEventListener("click",e=>{
+    const target=document.getElementById(a.getAttribute("href").slice(1));
+    if(target){
+      e.preventDefault();
+      setNav(false);
+      const y=target.getBoundingClientRect().top+window.scrollY-h.offsetHeight;
+      window.scrollTo({top:y,behavior:"smooth"});
+      history.replaceState(null,"",a.getAttribute("href"));
+    }
+  });
+});
 addEventListener("keydown",e=>{if(e.key==="Escape"&&h.classList.contains("open")){setNav(false);bg.focus()}});
 document.getElementById("yr").textContent=new Date().getFullYear();
 </script>
