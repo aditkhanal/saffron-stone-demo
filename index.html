@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saffron &amp; Stone — Tradition, Refined. (Fictional Demo)</title>
+<meta name="description" content="Saffron & Stone is a fictional contemporary Indian restaurant concept in Butwal, Nepal. Portfolio project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--char:#171714;--black:#10100F;--ivory:#F3EFE6;--gold:#C99A43;--olive:#77775A;--grey:#A8A49B;--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--line:rgba(243,239,230,.16);--pad:clamp(1.25rem,5vw,5rem)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--black);color:var(--ivory);font:400 1.0625rem/1.7 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--black);padding:.6rem 1rem;z-index:100}.skip:focus{left:0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05}
+h2{font-size:clamp(2.4rem,5vw,4.2rem)}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.wrap{padding:clamp(4.5rem,9vw,8rem) var(--pad)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.6rem;font:500 .85rem var(--sans);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);cursor:pointer;transition:background .25s,color .25s;min-height:48px}
+.btn.fill{background:var(--gold);color:var(--black)}.btn.fill:hover{background:var(--ivory);border-color:var(--ivory)}
+.btn.line{background:transparent;color:var(--ivory)}.btn.line:hover{background:var(--gold);color:var(--black)}
+svg.i{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* photographic images with fallback */
+.ph{position:relative;background:linear-gradient(135deg,#26261f,#1b1b17);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.err::after{content:attr(data-alt);position:absolute;inset:0;display:grid;place-items:center;padding:1rem;text-align:center;font:italic 1.1rem var(--serif);color:var(--grey);border:1px solid var(--line)}
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.solid,header.open{background:rgba(16,16,15,.96);border-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:1rem var(--pad);gap:1rem}
+.logo{font:500 1.7rem var(--serif);text-decoration:none;letter-spacing:.02em}.logo em{color:var(--gold);font-style:italic;padding:0 .12em}
+nav ul{display:flex;gap:2.2rem;list-style:none;padding:0;align-items:center}
+nav a:not(.btn){text-decoration:none;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid transparent}
+nav a:not(.btn):hover{border-color:var(--gold)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ivory);width:48px;height:48px;cursor:pointer;place-items:center}
+@media(max-width:900px){.burger{display:grid}
+nav{position:absolute;left:0;right:0;top:100%;background:var(--black);display:none;border-bottom:1px solid var(--line)}
+header.open nav{display:block}
+nav ul{flex-direction:column;align-items:stretch;gap:0;padding:1rem var(--pad) 2rem}
+nav li{border-bottom:1px solid var(--line)}nav a:not(.btn){display:block;padding:1rem 0;font-size:.95rem}
+nav li:last-child{border:0;padding-top:1.2rem}}
+/* hero */
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;isolation:isolate}
+.hero .ph{position:absolute;inset:0;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(16,16,15,.92) 0%,rgba(16,16,15,.7) 45%,rgba(16,16,15,.15) 100%),linear-gradient(0deg,rgba(16,16,15,.85),transparent 45%)}
+.hero .in{padding:9rem var(--pad) 6rem;max-width:46rem}
+.hero h1{font-size:clamp(3.6rem,10vw,8rem);margin:1.2rem 0 1.4rem}
+.hero h1 em{color:var(--gold)}
+.hero p.lead{font-size:1.15rem;max-width:34rem;color:#e4dfd3}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem}
+.loc{position:absolute;right:var(--pad);bottom:2.2rem;font-size:.72rem;letter-spacing:.22em;color:var(--grey);text-align:right}
+.scroll{position:absolute;left:var(--pad);bottom:1.6rem;display:flex;align-items:center;gap:.8rem;font-size:.72rem;letter-spacing:.2em;color:var(--grey);text-decoration:none}
+.scroll span{width:1px;height:38px;background:var(--gold);display:block}
+@media(max-width:700px){.loc{display:none}.hero .in{padding-bottom:7rem}}
+/* intro */
+.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.intro p{color:#cfcabe;margin-top:1.5rem;max-width:34rem}
+.intro .imgs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:end}
+.intro .a{aspect-ratio:3/4}.intro .b{aspect-ratio:3/5;margin-bottom:-3rem}
+.intro h2{margin-top:1rem}
+@media(max-width:850px){.intro{grid-template-columns:1fr}.intro .b{margin-bottom:0}}
+/* menu */
+.menu{background:var(--char)}
+.menu-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3rem}
+.filters button{background:none;color:var(--ivory);border:1px solid var(--line);padding:.6rem 1.2rem;font:500 .8rem var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.filters button:hover{border-color:var(--gold)}
+.filters button[aria-pressed=true]{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:2.5rem 2rem;list-style:none;padding:0}
+.dish .ph{aspect-ratio:4/5;margin-bottom:1.1rem}.dish .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ph.ill.err::after{content:attr(data-alt);background:#171714}
+.dish .row{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+.dish h3{font-size:1.65rem}.price{color:var(--gold);font-weight:500;white-space:nowrap}
+.dish p{color:#bdb8ac;font-size:.95rem;margin-top:.6rem}
+.dish .cat{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);filter:brightness(1.5)}
+.note{margin-top:3rem;color:var(--grey);font-size:.9rem}
+.dish .ph{transition:border-color .3s;border:1px solid transparent}.dish .ph img{transition:transform .8s}
+.dish:hover .ph{border-color:var(--gold)}.dish:hover .ph img{transform:scale(1.05)}
+.dish .row h3{transition:color .25s}.dish:hover h3{color:var(--gold)}
+.pick{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.2rem;margin-top:3rem}
+.pick figure{position:relative;margin:0;min-height:420px;display:flex;align-items:flex-end}
+.pick figure:first-child{grid-row:span 1;min-height:560px}.pick .ph{position:absolute;inset:0}
+.pick figure::after{content:"";position:absolute;inset:auto 0 0;height:60%;background:linear-gradient(0deg,rgba(16,16,15,.92),transparent)}
+.pick figcaption{position:relative;z-index:1;padding:1.5rem}.pick h3{font-size:1.9rem}.pick p{font-size:.92rem;color:#d6d1c5}
+.pick .n{font:italic 500 1rem var(--serif);color:var(--gold)}
+@media(max-width:850px){.pick{grid-template-columns:1fr}.pick figure,.pick figure:first-child{min-height:340px}}
+.band{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;isolation:isolate;padding:5rem var(--pad)}
+.band .ph{position:absolute;inset:0;z-index:-2}.band::before{content:"";position:absolute;inset:0;background:rgba(16,16,15,.62);z-index:-1}
+.band q{font:italic 500 clamp(2rem,5vw,4rem)/1.15 var(--serif);max-width:52rem;quotes:none;display:block}
+.band .eyebrow{display:block;margin-top:1.5rem}
+.light{background:var(--ivory);color:var(--char)}.light .eyebrow{color:#7a5a1c}.light p{color:#3a3a33!important}
+.light .fic{border-color:#77775a;color:#4a4a3c!important}
+.story2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center;max-width:78rem;margin:auto}
+.story2 .ph{aspect-ratio:4/5}.story2 p{margin-bottom:1.2rem;max-width:34rem}.story2 h2{margin:1rem 0 1.8rem}
+@media(max-width:850px){.story2{grid-template-columns:1fr}}
+/* signature */
+.sig{display:grid;grid-template-columns:1.2fr 1fr;min-height:90vh}
+.sig .ph{min-height:420px}
+.sig .txt{padding:clamp(3rem,7vw,7rem) var(--pad);display:flex;flex-direction:column;justify-content:center;background:var(--black)}
+.sig ul{list-style:none;padding:0;margin-top:2rem;border-top:1px solid var(--line)}
+.sig li{padding:1.1rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:7.5rem 1fr;gap:1rem}
+.sig li b{font:italic 500 1.4rem var(--serif);color:var(--gold)}
+.sig li span{color:#cfcabe;font-size:.97rem}
+@media(max-width:850px){.sig{grid-template-columns:1fr}}
+/* story */
+.story{max-width:60rem;margin:auto;text-align:center}
+.story h2{margin:1rem 0 2rem}
+.story p{color:#cfcabe;margin:0 auto 1.2rem;max-width:40rem}
+.story .fic{display:inline-block;margin-top:1.5rem;border:1px solid var(--olive);padding:.5rem 1rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+/* gallery */
+.gal{background:var(--char)}
+.gg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,19vw,270px);gap:1rem;margin-top:3rem}
+.gg button{padding:0;border:0;cursor:pointer;display:block;background:none;height:100%}
+.gg .ph{height:100%;transition:filter .3s}.gg button:hover .ph{filter:brightness(1.15)}
+.gg .w{grid-column:span 2}.gg .t{grid-row:span 2}
+@media(max-width:700px){.gg{grid-template-columns:1fr 1fr}.gg .w{grid-column:span 2}}
+dialog{border:0;background:transparent;color:var(--ivory);max-width:min(1100px,94vw);width:100%;padding:0;margin:auto}
+dialog::backdrop{background:rgba(10,10,9,.92)}
+dialog .ph{height:min(72vh,720px)}dialog img{object-fit:contain}
+dialog .cap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.8rem;font-size:.92rem;color:var(--grey)}
+.lb-ctl{display:flex;gap:.5rem}.lb-ctl button{background:var(--char);border:1px solid var(--line);color:var(--ivory);width:48px;height:48px;cursor:pointer;display:grid;place-items:center}
+.lb-ctl button:hover{border-color:var(--gold)}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem)}
+.contact dl{margin-top:2rem}.contact dt{margin-top:1.6rem;display:flex;gap:.6rem;align-items:center;color:var(--gold);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}
+.contact dd{color:#d6d1c5;margin-top:.3rem}
+.contact table{border-collapse:collapse;width:100%;max-width:22rem;margin-top:.4rem}
+.contact td{padding:.35rem 0;border-bottom:1px solid var(--line);color:#d6d1c5}.contact td:last-child{text-align:right}
+.map{min-height:360px;border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:2rem;background:repeating-linear-gradient(0deg,transparent 0 39px,rgba(243,239,230,.05) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(243,239,230,.05) 39px 40px),var(--char)}
+.map svg{width:2.4rem;height:2.4rem;color:var(--gold);margin:0 auto .8rem}
+.map p{max-width:20rem;color:var(--grey);font-size:.95rem}
+.map strong{font:500 1.8rem var(--serif);color:var(--ivory);display:block}
+@media(max-width:850px){.contact{grid-template-columns:1fr}}
+/* footer */
+footer{border-top:1px solid var(--line);padding:4rem var(--pad) 2rem;background:var(--black)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem}
+.fg p,.fg li{color:var(--grey);font-size:.95rem}.fg ul{list-style:none;padding:0}.fg li{padding:.25rem 0}
+.fg h3{font:600 .75rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.fg a{text-decoration:none}.fg a:hover{color:var(--gold)}
+.legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--grey)}
+@media(max-width:750px){.fg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></symbol>
+<symbol id="left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+<symbol id="down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+</svg>
+
+<header id="hdr">
+<div class="bar">
+<a class="logo" href="#home" aria-label="Saffron and Stone, home">Saffron<em>&amp;</em>Stone</a>
+<button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><svg class="i" id="bi"><use href="#menu"/></svg></button>
+<nav id="nav" aria-label="Main">
+<ul>
+<li><a href="#home">Home</a></li><li><a href="#story">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
+<li><a class="btn fill" href="#menu">Explore Menu</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+<div class="ph" data-alt="Contemporary Indian dining"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=2000&q=75" alt="Butter chicken in a metal bowl beside rice, served at a dark table" fetchpriority="high" style="object-position:75% 60%"></div>
+<div class="in">
+<p class="eyebrow">A Contemporary Indian Kitchen</p>
+<h1>Tradition,<br><em>Refined.</em></h1>
+<p class="lead">Familiar flavours, thoughtfully reimagined. Discover a dining experience rooted in tradition and crafted for today.</p>
+<div class="cta"><a class="btn fill" href="#menu">Explore Our Menu <svg class="i"><use href="#arrow"/></svg></a><a class="btn line" href="#story">Discover Our Story</a></div>
+</div>
+<a class="scroll" href="#intro" aria-label="Scroll to introduction"><span></span>SCROLL</a>
+<p class="loc">BUTWAL, NEPAL · FICTIONAL DEMO</p>
+</section>
+
+<section class="wrap intro" id="intro">
+<div>
+<p class="eyebrow">The Concept</p>
+<h2>Rooted in heritage. Made for the moment.</h2>
+<p>Saffron &amp; Stone is a concept celebrating Indian culinary traditions through thoughtful presentation, aromatic spices and a contemporary approach. Each plate imagines how familiar dishes might look and feel at a modern table.</p>
+</div>
+<div class="imgs">
+<div class="ph a" data-alt="Whole spices"><img loading="lazy" src="https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?auto=format&fit=crop&w=700&q=70" alt="Cinnamon sticks, star anise and peppercorns on a wooden surface"></div>
+<div class="ph b" data-alt="Tandoori plating"><img loading="lazy" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=70" alt="Grilled meat and vegetables served at the table"></div>
+</div>
+</section>
+
+<section class="wrap menu" id="menu" aria-labelledby="mh">
+<div class="menu-head"><div><p class="eyebrow">Featured Menu</p><h2 id="mh">From the kitchen</h2></div><p style="color:var(--grey);max-width:22rem;font-size:.95rem">Illustrative dishes and prices for the demo. Prices in Nepalese Rupees (NPR).</p></div>
+<div class="filters" role="group" aria-label="Filter menu by category" id="filters"></div>
+<ul class="grid" id="grid" aria-live="polite"></ul>
+<p class="note">This is a sample menu for a fictional restaurant. A full menu does not exist for this concept.</p>
+</section>
+
+<section class="wrap" id="picks" aria-labelledby="ph2">
+<p class="eyebrow">Chef&rsquo;s Selection (concept)</p><h2 id="ph2" style="margin-top:1rem">Three plates to begin with</h2>
+<div class="pick">
+<figure><div class="ph" data-alt="Butter chicken"><img loading="lazy" src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1000&q=70" alt="Butter chicken in a metal bowl beside rice" style="object-position:center"></div><figcaption><span class="n">Signature</span><h3>Saffron Butter Chicken</h3><p>Silky tomato and butter sauce, saffron, fresh coriander.</p></figcaption></figure>
+<figure><div class="ph" data-alt="Chicken biryani"><img loading="lazy" src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=800&q=70" alt="Chicken biryani in a white bowl"></div><figcaption><span class="n">From the dum</span><h3>Chicken Biryani</h3><p>Basmati, slow-steamed with whole spices.</p></figcaption></figure>
+<figure><div class="ph" data-alt="Gulab jamun"><img loading="lazy" src="https://images.unsplash.com/photo-1593701461250-d7b22dfd3a77?auto=format&fit=crop&w=800&q=70" alt="Gulab jamun dessert on a plate"></div><figcaption><span class="n">To finish</span><h3>Gulab Jamun</h3><p>Warm, soft and fragrant with cardamom.</p></figcaption></figure>
+</div>
+</section>
+
+<section class="sig" aria-labelledby="sh">
+<div class="ph" data-alt="Plated dish"><img loading="lazy" src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1400&q=75" alt="A white bowl of chicken biryani with rice and spiced meat"></div>
+<div class="txt">
+<p class="eyebrow">The Signature Experience</p>
+<h2 id="sh" style="margin-top:1rem">Flavour, welcome, presentation.</h2>
+<ul>
+<li><b>Flavour</b><span>Slow-built sauces, freshly toasted spices and the smoky edge of a hot tandoor.</span></li>
+<li><b>Hospitality</b><span>Warm, unhurried service, designed around sharing.</span></li>
+<li><b>Presentation</b><span>Clean plating, dark stoneware and saffron accents.</span></li>
+</ul>
+</div>
+</section>
+
+<section class="wrap light" id="story" aria-labelledby="oh">
+<div class="story2">
+<div class="ph" data-alt="Spices"><img loading="lazy" src="https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?auto=format&fit=crop&w=1000&q=70" alt="Whole spices: cinnamon, star anise and peppercorns"></div>
+<div>
+<p class="eyebrow">Our Story</p>
+<h2 id="oh">A familiar flavour, a fresh perspective.</h2>
+<p>Saffron &amp; Stone imagines a dining room where the dishes many of us grew up loving are treated with fresh care: sharper plating, balanced spice and a calm, contemporary setting.</p>
+<p>The name pairs saffron, a symbol of Indian cooking, with stone: the heat of the tandoor and the grounded, modern interior we picture around it.</p>
+<span class="fic" style="display:inline-block;border:1px solid;padding:.5rem 1rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase">Fictional concept · Portfolio project</span>
+</div></div>
+</section>
+
+<section class="band" aria-label="Brand statement">
+<div class="ph" data-alt="Dining"><img loading="lazy" src="https://images.unsplash.com/photo-1728910156510-77488f19b152?auto=format&fit=crop&w=2000&q=70" alt="A table filled with a spread of Indian dishes"></div>
+<div><q>Food made to be shared, plated to be remembered.</q><span class="eyebrow">Saffron &amp; Stone · Concept</span></div>
+</section>
+
+<section class="wrap gal" id="gallery" aria-labelledby="gh">
+<p class="eyebrow">Gallery</p><h2 id="gh" style="margin-top:1rem">The atmosphere</h2>
+<div class="gg" id="gg"></div>
+</section>
+
+<section class="wrap contact" id="contact" aria-labelledby="ch">
+<div>
+<p class="eyebrow">Contact &amp; Location</p>
+<h2 id="ch" style="margin-top:1rem">Visit (in concept)</h2>
+<dl>
+<dt><svg class="i"><use href="#pin"/></svg>Location</dt><dd>Butwal, Nepal. Demo location, not a verified restaurant address.</dd>
+<dt><svg class="i"><use href="#clock"/></svg>Illustrative demo hours</dt>
+<dd><table><tbody><tr><td>Mon – Fri</td><td>12:00 – 22:00</td></tr><tr><td>Sat – Sun</td><td>11:00 – 23:00</td></tr></tbody></table></dd>
+<dt><svg class="i"><use href="#at"/></svg>Email &amp; social</dt><dd>hello@example.invalid (placeholder)<br>Social accounts: placeholders only, none exist.</dd>
+</dl>
+</div>
+<div class="map" role="img" aria-label="Location placeholder, no real address configured"><div><svg><use href="#pin"/></svg><strong>Butwal, Nepal</strong><p>Placeholder only. No real address is configured, so no map or directions link is shown.</p></div></div>
+</section>
+</main>
+
+<footer>
+<div class="fg">
+<div><a class="logo" href="#home">Saffron<em>&amp;</em>Stone</a><p style="margin-top:1rem;max-width:22rem">A contemporary Indian restaurant concept. Tradition, Refined.</p></div>
+<div><h3>Explore</h3><ul><li><a href="#home">Home</a></li><li><a href="#story">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h3>Location</h3><p>Butwal, Nepal<br>Demo location only</p></div>
+</div>
+<div class="legal"><span>© <span id="yr">2026</span> Saffron &amp; Stone</span><span>Portfolio concept — fictional restaurant</span></div>
+</footer>
+
+<dialog id="lb" aria-label="Image viewer">
+<div class="ph" id="lbph" data-alt=""><img id="lbimg" alt="" src=""></div>
+<div class="cap"><span id="lbcap" aria-live="polite"></span>
+<div class="lb-ctl"><button id="prev" aria-label="Previous image"><svg class="i"><use href="#left"/></svg></button><button id="next" aria-label="Next image"><svg class="i"><use href="#right"/></svg></button><button id="close" aria-label="Close image viewer"><svg class="i"><use href="#x"/></svg></button></div></div>
+</dialog>
+
+<script>
+const U=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
+const dishes=[
+["Tandoori Paneer Tikka","Starters","Charred cottage cheese, peppers and onion in a spiced yoghurt marinade.",650,"1555939594-58d7cb561ad1","tikka","#d98a2b","#f3efe6"],
+["Stone-Fired Chicken Tikka","Starters","Tender chicken with ginger, garlic and Kashmiri chilli, finished over high heat.",780,"1555939594-58d7cb561ad1","tikka","#b9501f","#6b8a3a"],
+["Saffron Butter Chicken","Mains","Tomato and butter sauce lifted with saffron and a touch of cream.",980,"1631452180519-c014fe946bc7","curry","#c8601f","#f3d9a0"],
+["Dal Makhani","Mains","Black lentils simmered slowly with butter and smoky spice.",720,"1631452180519-c014fe946bc7","curry","#5a2f1a","#e8c27a"],
+["Vegetable Dum Biryani","Biryani","Fragrant basmati and seasonal vegetables, sealed and steamed.",850,"1631515243349-e0cb75fb8d3a","rice","#6b8a3a","#d98a2b"],
+["Hyderabadi Chicken Biryani","Biryani","Layered rice and marinated chicken with mint and fried onion.",1050,"1631515243349-e0cb75fb8d3a","rice","#c99a43","#7a3f1c"],
+["Garlic Naan","Breads","Soft tandoor bread brushed with garlic and fresh coriander.",220,"1565557623262-b51c2513a641","naan","#d9a566","#5f8f3a"],
+["Butter Naan","Breads","Classic leavened bread, blistered and brushed with butter.",180,"1565557623262-b51c2513a641","naan","#e0b070","#f3e3b0"],
+["Gulab Jamun","Desserts","Warm milk dumplings in cardamom and rose syrup.",380,"1593701461250-d7b22dfd3a77","balls","#6b2d12","#c99a43"],
+["Saffron Phirni","Desserts","Chilled ground-rice pudding with saffron and pistachio.",420,"1593701461250-d7b22dfd3a77","bowl","#efe6d2","#c99a43"]];
+function ill(k,a,b){const c='<circle cx="200" cy="250" r="165" fill="#201f1a" stroke="#C99A43" stroke-width="2"/><circle cx="200" cy="250" r="148" fill="none" stroke="#C99A43" stroke-opacity=".35"/>';let d="";
+if(k==="curry")d=`<circle cx="200" cy="250" r="118" fill="${a}"/><path d="M110 250c40-50 110-50 180 0M130 290c50-30 90-30 140 0" stroke="${b}" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85"/>`+[[170,230],[230,260],[200,300],[150,270]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="#6b8a3a"/>`).join("");
+if(k==="rice")d=`<ellipse cx="200" cy="262" rx="125" ry="88" fill="#e9d9a8"/>`+[[150,240],[210,215],[250,255],[180,285],[230,290],[160,205]].map((p,i)=>`<rect x="${p[0]}" y="${p[1]}" width="34" height="24" rx="9" fill="${i%2?a:b}" transform="rotate(${i*35} ${p[0]} ${p[1]})"/>`).join("")+`<circle cx="200" cy="245" r="9" fill="#6b8a3a"/>`;
+if(k==="naan")d=`<ellipse cx="200" cy="250" rx="125" ry="98" fill="${a}" transform="rotate(-18 200 250)"/>`+[[150,225],[225,205],[245,280],[170,285],[205,248]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="9" fill="#7a4a1e" opacity=".8"/>`).join("")+[[185,215],[215,265],[160,255],[250,240]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${b}"/>`).join("");
+if(k==="tikka")d=`<path d="M85 330L315 170" stroke="#A8A49B" stroke-width="5" stroke-linecap="round"/>`+[0,1,2,3].map(i=>`<rect x="${112+i*46}" y="${298-i*32}" width="52" height="46" rx="12" fill="${a}" transform="rotate(-35 ${138+i*46} ${321-i*32})"/><circle cx="${130+i*46}" cy="${305-i*32}" r="6" fill="#3b1d0c" opacity=".7"/><circle cx="${150+i*46}" cy="${325-i*32}" r="4" fill="${b}"/>`).join("");
+if(k==="balls")d=`<circle cx="200" cy="250" r="118" fill="none" stroke="${b}" stroke-width="6" opacity=".6"/>`+[[165,225],[240,230],[200,290]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="46" fill="${a}"/><circle cx="${p[0]-14}" cy="${p[1]-16}" r="12" fill="${b}" opacity=".55"/>`).join("");
+if(k==="bowl")d=`<circle cx="200" cy="250" r="115" fill="${a}"/><circle cx="200" cy="250" r="96" fill="#f8f1e0"/>`+[[170,225],[225,240],[195,285],[240,275],[165,270]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="#6b8a3a"/>`).join("")+`<path d="M185 235l25 20M215 232l-18 28M200 250l12 24" stroke="${b}" stroke-width="3" stroke-linecap="round"/>`;
+return "url('data:image/svg+xml,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="#171714"/>${c}${d}</svg>`)+"')"}
+const cats=["All","Starters","Mains","Biryani","Breads","Desserts"];
+const npr=n=>"NPR "+n.toLocaleString("en-IN");
+const fb=el=>{el.classList.add("err");el.querySelector("img")?.remove()};
+function wire(root){root.querySelectorAll(".ph img").forEach(i=>{const p=i.parentElement;i.addEventListener("error",()=>fb(p));if(i.getAttribute("src")&&i.complete&&i.naturalWidth===0)fb(p)})}
+wire(document);
+// menu
+const grid=document.getElementById("grid"),fl=document.getElementById("filters");
+cats.forEach((c,i)=>{const b=document.createElement("button");b.textContent=c;b.type="button";b.setAttribute("aria-pressed",i==0);b.onclick=()=>{fl.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));render(c)};fl.append(b)});
+function render(c){grid.innerHTML=dishes.filter(d=>c==="All"||d[1]===c).map(d=>`<li class="dish"><div class="ph ill" role="img" aria-label="${d[0]}" style="background:#171714"><img loading="eager" src="${U(d[4],640)}" alt="${d[0]}, plated"></div><div class="row"><h3>${d[0]}</h3><span class="price">${npr(d[3])}</span></div><p class="cat">${d[1]}</p><p>${d[2]}</p></li>`).join("");wire(grid)}
+render("All");
+// gallery
+const G=[["1728910156510-77488f19b152","A spread of Indian dishes on a shared table","w"],["1581600140682-d4e68c8cde32","Cinnamon sticks, star anise and peppercorns","t"],["1631515243349-e0cb75fb8d3a","Chicken biryani in a white bowl",""],["1565557623262-b51c2513a641","Flatbread with sliced meat and sauce",""],["1742599361574-6fb156181466","Creamy chicken tikka masala","w"],["1631515243349-e0cb75fb8d3a","Rice with vegetables on a plate",""],["1593701461250-d7b22dfd3a77","Gulab jamun in a pan",""],["1565557623262-b51c2513a641","A bowl of warm naan bread",""]];
+const gg=document.getElementById("gg");
+G.forEach((g,i)=>{const b=document.createElement("button");b.type="button";b.className=g[2];b.setAttribute("aria-label","Open image: "+g[1]);b.innerHTML=`<div class="ph" data-alt="${g[1]}"><img loading="lazy" src="${U(g[0],900)}" alt="${g[1]}"></div>`;b.onclick=()=>open(i,b);gg.append(b)});wire(gg);
+const lb=document.getElementById("lb"),li=document.getElementById("lbimg"),lp=document.getElementById("lbph");let cur=0,opener;
+function show(i){cur=(i+G.length)%G.length;lp.classList.remove("err");if(!lp.contains(li))lp.append(li);li.alt=G[cur][1];li.src=U(G[cur][0],1600);lp.dataset.alt=G[cur][1];document.getElementById("lbcap").textContent=`${G[cur][1]} (${cur+1}/${G.length})`}
+li.addEventListener("error",()=>{lp.classList.add("err");li.remove()});
+function open(i,b){opener=b;show(i);lb.showModal();document.getElementById("close").focus()}
+document.getElementById("prev").onclick=()=>show(cur-1);
+document.getElementById("next").onclick=()=>show(cur+1);
+document.getElementById("close").onclick=()=>lb.close();
+lb.addEventListener("close",()=>opener&&opener.focus());
+lb.addEventListener("click",e=>{if(e.target===lb)lb.close()});
+lb.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+// nav
+const h=document.getElementById("hdr"),bg=document.getElementById("burger"),bi=document.getElementById("bi");
+const sc=()=>h.classList.toggle("solid",scrollY>40);sc();addEventListener("scroll",sc,{passive:true});
+function setNav(o){h.classList.toggle("open",o);bg.setAttribute("aria-expanded",o);bg.setAttribute("aria-label",o?"Close menu":"Open menu");bi.innerHTML=`<use href="#${o?"x":"menu"}"/>`}
+bg.onclick=()=>setNav(!h.classList.contains("open"));
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>setNav(false)));
+addEventListener("keydown",e=>{if(e.key==="Escape"&&h.classList.contains("open")){setNav(false);bg.focus()}});
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
